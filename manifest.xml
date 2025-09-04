@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+    <Id>12345678-90ab-cdef-1234-567890abcdef</Id>
+    <Version>1.0.0.0</Version>
+    <ProviderName>Sinan Yolal</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="Table Helper" />
+    <Description DefaultValue="Edit most preferred columns in task pane" />
+    <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
+    <SupportUrl DefaultValue="https://localhost:3000/support" />
+    <Hosts>
+        <Host Name="Workbook" />
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html" />
+    </DefaultSettings>
+    <Permissions>ReadWriteDocument</Permissions>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                      xsi:type="VersionOverridesV1_0">
+        <Hosts>
+            <Host xsi:type="Workbook">
+                <DesktopFormFactor>
+                    <!-- Ribbon commands -->
+                    <ExtensionPoint xsi:type="PrimaryCommandSurface">
+                        <OfficeTab id="TabHome">
+                            <Group id="CommandsGroup">
+                                <Label resid="CommandsGroup.GroupLabel" />
+                                <Icon>
+                                    <bt:Image size="16"
+                                              resid="Icon16" />
+                                    <bt:Image size="32"
+                                              resid="Icon32" />
+                                    <bt:Image size="80"
+                                              resid="Icon80" />
+                                </Icon>
+                                <!-- Simple button that opens the task pane -->
+                                <Control xsi:type="Button"
+                                         id="OpenTaskPaneButton">
+                                    <Label resid="CommandsGroup.OpenPaneLabel" />
+                                    <Supertip>
+                                        <Title resid="CommandsGroup.OpenPaneLabel" />
+                                        <Description resid="CommandsGroup.OpenPaneDesc" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16"
+                                                  resid="Icon16" />
+                                        <bt:Image size="32"
+                                                  resid="Icon32" />
+                                        <bt:Image size="80"
+                                                  resid="Icon80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <!-- This must reference a bt:Url in <Resources> -->
+                                        <SourceLocation resid="Taskpane.Url" />
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </OfficeTab>
+                    </ExtensionPoint>
+                </DesktopFormFactor>
+            </Host>
+        </Hosts>
+        <!-- Localized resources: URLs, images, and strings used above -->
+        <Resources>
+        <!-- FIX 2: Define the icon resources that are referenced above -->
+            <bt:Images>
+                <bt:Image id="Icon16"
+                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                <bt:Image id="Icon32"
+                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                <bt:Image id="Icon80"
+                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+            </bt:Images>
+            <bt:Urls>
+                <!-- Use your existing task pane page -->
+                <bt:Url id="Taskpane.Url"
+                        DefaultValue="https://localhost:3000/taskpane.html" />
+            </bt:Urls>
+            
+            <bt:ShortStrings>
+                <bt:String id="CommandsGroup.GroupLabel"
+                           DefaultValue="Row Editor" />
+                <bt:String id="CommandsGroup.OpenPaneLabel"
+                           DefaultValue="Show Table Helper" />
+            </bt:ShortStrings>
+            <bt:LongStrings>
+                <bt:String id="CommandsGroup.OpenPaneDesc"
+                           DefaultValue="Open the Table Helper task pane." />
+            </bt:LongStrings>
+        </Resources>
+    </VersionOverrides>
+</OfficeApp>
