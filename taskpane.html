@@ -8,7 +8,27 @@
   <script type="text/javascript" src="taskpane.js"></script>
 </head>
 <body>
-  <h2>Edit Row</h2>
+  
+<button id="toggleSettingsBtn" type="button">Settings</button>
+
+<section id="settings" hidden>
+  <h3>Columns to edit</h3>
+
+  <p class="muted">
+    Enter column names (match table headers). Separate by comma <em>or</em> newline.
+  </p>
+
+  <textarea id="columnsInput" rows="5" placeholder="e.g. cool, age, city, country, note"></textarea>
+
+  <div style="margin-top: .5rem;">
+    <button id="saveSettingsBtn" type="button">Save</button>
+    <button id="resetSettingsBtn" type="button">Reset to defaults</button>
+  </div>
+
+  <p id="settingsMessage" class="muted" style="margin-top: .5rem;"></p>
+</section>
+<hr/>
+  <!-- <h2>Edit Row</h2> -->
   <div id="fields"></div>
   <button id="saveBtn">Save Changes</button>
 </body>
