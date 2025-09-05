@@ -10,13 +10,13 @@
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Table Helper" />
     <Description DefaultValue="Edit most preferred columns in task pane" />
-    <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-    <SupportUrl DefaultValue="https://localhost:3000/support" />
+    <IconUrl DefaultValue="https://sybrk.github.io/excel-test/assets/icon-32.png" />
+    <SupportUrl DefaultValue="https://sybrk.github.io/excel-test/support" />
     <Hosts>
         <Host Name="Workbook" />
     </Hosts>
     <DefaultSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html" />
+        <SourceLocation DefaultValue="https://sybrk.github.io/excel-test/taskpane.html" />
     </DefaultSettings>
     <Permissions>ReadWriteDocument</Permissions>
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
@@ -69,16 +69,16 @@
         <!-- FIX 2: Define the icon resources that are referenced above -->
             <bt:Images>
                 <bt:Image id="Icon16"
-                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                          DefaultValue="https://sybrk.github.io/excel-test/assets/icon-32.png" />
                 <bt:Image id="Icon32"
-                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                          DefaultValue="https://sybrk.github.io/excel-test/assets/icon-32.png" />
                 <bt:Image id="Icon80"
-                          DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                          DefaultValue="https://sybrk.github.io/excel-test/assets/icon-32.png" />
             </bt:Images>
             <bt:Urls>
                 <!-- Use your existing task pane page -->
                 <bt:Url id="Taskpane.Url"
-                        DefaultValue="https://localhost:3000/taskpane.html" />
+                        DefaultValue="https://sybrk.github.io/excel-test/taskpane.html" />
             </bt:Urls>
             
             <bt:ShortStrings>
