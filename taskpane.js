@@ -1,3 +1,4 @@
+
 // Keep track of which (row, columnName) cells are unlocked by the user.
 const unlockedCells = new Set(); // keys like `${rowIndex}::${columnName}`
 
@@ -214,7 +215,9 @@ function resetUserColumns() {
 Office.onReady(async () => {
   document.getElementById("saveBtn").onclick = saveChanges;
 
+
   initLockHandlers();
+
 
   // Settings UI
   document.getElementById("toggleSettingsBtn").addEventListener("click", () => {
@@ -309,6 +312,7 @@ async function loadSelectedRow() {
     }
 
     // Use the first table (or use `getItem("YourTableName")` if you know it)
+
     try {
       tables.getItem(tableName);
       console.log(`Using table: ${tableName}`);
@@ -324,8 +328,7 @@ async function loadSelectedRow() {
       return;
     }
     const table = tables.getItem(tableName);
-   
-    //const table = tables.getItem("All_Jobs");
+
     // Work only with the data body (no headers/totals)
     const body = table.getDataBodyRange();
     const hit = body.getIntersectionOrNullObject(activeCell.getEntireRow());
@@ -344,6 +347,7 @@ async function loadSelectedRow() {
 
     // Compute the row index relative to the table body
     const relativeRowIndex = hit.rowIndex - body.rowIndex;
+
     
     let myColumns = loadUserColumns();
     if (myColumns.length === 0) {
@@ -481,5 +485,6 @@ async function saveChanges() {
     }
 
     await context.sync();
+
   });
 }
